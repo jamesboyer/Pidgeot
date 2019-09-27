@@ -1,0 +1,14 @@
+﻿syntax = "proto3";
+package Pidgeot.Interactions;
+
+message PidgeyInteractionsNofityRequest {
+  double MinSeconds = 1;
+}
+
+message PidgeyInteraction {
+  double SecondsHovered = 1;
+}
+
+service InteractionReporter {
+  rpc GetPidgeyInteractionsStream( PidgeyInteractionsNofityRequest ) returns ( stream PidgeyInteraction ) {}
+}
